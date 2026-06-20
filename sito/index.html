@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aires Beauty Estetica · Centro estetico</title>
+<meta name="description" content="Aires Beauty Estetica — nails, viso e corpo. Manicure, semipermanente, ricostruzione unghie, make-up, laminazione ciglia, depilazione laser, massaggi e radiofrequenza. Prenota su WhatsApp." />
+<link rel="icon" href="assets/img/logo.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --green-900:#0a2c18;
+  --green-800:#0e3a1f;
+  --green-700:#145a32;
+  --green-500:#1f7a45;
+  --gold:#c9a24b;
+  --gold-soft:#e3c987;
+  --pink:#e5197d;
+  --pink-2:#ff3b6b;
+  --cream:#f6f3ec;
+  --ink:#13241a;
+  --shadow:0 18px 50px rgba(8,30,18,.18);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Jost',sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  overflow-x:hidden;
+  line-height:1.65;
+}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
+.script{font-family:'Great Vibes',cursive}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.container{width:min(1180px,92vw);margin-inline:auto}
+.eyebrow{
+  font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--gold);font-weight:500;
+}
+.section{padding:clamp(64px,9vw,120px) 0}
+.center{text-align:center}
+
+/* ---------- NAV ---------- */
+header.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px clamp(18px,5vw,54px);
+  transition:.4s var(--ease);
+}
+header.nav.scrolled{
+  background:rgba(10,44,24,.92);
+  backdrop-filter:blur(10px);
+  box-shadow:0 8px 30px rgba(0,0,0,.25);
+  padding-top:10px;padding-bottom:10px;
+}
+.brand{display:flex;align-items:center;gap:12px;color:#fff}
+.brand img{width:46px;height:46px;border-radius:50%;object-fit:cover;
+  box-shadow:0 0 0 2px var(--gold);}
+.brand b{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;letter-spacing:.02em}
+.brand small{display:block;font-size:.6rem;letter-spacing:.34em;color:var(--gold-soft);text-transform:uppercase;margin-top:-4px}
+nav.links{display:flex;gap:30px;align-items:center}
+nav.links a{color:#fff;font-size:.9rem;font-weight:400;letter-spacing:.04em;position:relative;opacity:.92}
+nav.links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1.5px;background:var(--gold);transition:.35s var(--ease)}
+nav.links a:hover::after{width:100%}
+.nav-cta{
+  background:linear-gradient(135deg,var(--pink),var(--pink-2));
+  color:#fff!important;padding:10px 20px;border-radius:40px;font-weight:500;
+  box-shadow:0 8px 22px rgba(229,25,125,.4);
+}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.burger span{width:26px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;min-height:100vh;display:flex;align-items:center;
+  background:radial-gradient(120% 120% at 80% 10%,#1f7a45 0%,var(--green-800) 45%,var(--green-900) 100%);
+  overflow:hidden;
+}
+.hero .leaf,.hero .petal{position:absolute;opacity:.5;will-change:transform}
+.hero-inner{position:relative;z-index:5;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:90px;width:min(1180px,92vw);margin-inline:auto}
+.hero-copy{color:#fff}
+.hero-copy .eyebrow{animation:fadeUp .9s var(--ease) both}
+.hero-copy h1{
+  font-size:clamp(2.8rem,7vw,5.4rem);line-height:1.02;font-weight:600;margin:.18em 0 .1em;
+  animation:fadeUp 1s .1s var(--ease) both;
+}
+.hero-copy h1 .script{display:block;color:var(--gold-soft);font-size:1.18em;line-height:.9}
+.hero-copy p.lead{
+  font-size:1.12rem;max-width:32ch;color:#e8efe9;font-weight:300;margin-bottom:30px;
+  animation:fadeUp 1s .2s var(--ease) both;
+}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;animation:fadeUp 1s .3s var(--ease) both}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;border-radius:44px;padding:15px 28px;
+  font-weight:500;font-size:.96rem;letter-spacing:.02em;cursor:pointer;border:none;
+  transition:.35s var(--ease);
+}
+.btn-primary{background:linear-gradient(135deg,var(--pink),var(--pink-2));color:#fff;box-shadow:0 14px 34px rgba(229,25,125,.45)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(229,25,125,.55)}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+.btn-ghost:hover{background:#fff;color:var(--green-800);border-color:#fff}
+.hero-logo{position:relative;display:flex;justify-content:center;animation:floatLogo 6s ease-in-out infinite}
+.hero-logo .ring{
+  position:absolute;inset:-6% ;border-radius:50%;
+  background:conic-gradient(from 0deg,var(--gold),transparent 25%,var(--gold) 50%,transparent 75%,var(--gold));
+  filter:blur(2px);opacity:.55;animation:spin 14s linear infinite;
+}
+.hero-logo img{
+  position:relative;width:min(420px,70%);border-radius:24px;object-fit:cover;
+  box-shadow:var(--shadow);border:3px solid rgba(227,201,135,.6);
+}
+.scroll-ind{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:6;color:#fff;opacity:.7;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;text-align:center}
+.scroll-ind .mouse{width:22px;height:36px;border:2px solid rgba(255,255,255,.6);border-radius:14px;margin:0 auto 8px;position:relative}
+.scroll-ind .mouse::after{content:"";position:absolute;left:50%;top:7px;width:4px;height:7px;border-radius:3px;background:#fff;transform:translateX(-50%);animation:wheel 1.6s infinite}
+
+/* marquee */
+.marquee{background:var(--green-800);color:var(--gold-soft);overflow:hidden;padding:14px 0;white-space:nowrap}
+.marquee .track{display:inline-block;animation:scrollX 24s linear infinite}
+.marquee span{font-family:'Cormorant Garamond',serif;font-size:1.4rem;margin:0 28px;letter-spacing:.04em}
+.marquee b{color:var(--pink-2)}
+
+/* ---------- SERVIZI ---------- */
+.services{background:var(--green-900);position:relative;overflow:hidden}
+.services::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(31,122,69,.25),transparent 70%);
+  pointer-events:none;
+}
+.head{max-width:640px;margin:0 auto 56px}
+.head h2{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:600;color:var(--green-800);line-height:1.05;margin-top:.12em}
+.head p{color:#5a6b5f;margin-top:14px}
+.services .head h2{color:#fff}
+.services .head p{color:#b9c9bf}
+
+.srv-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+.srv-card{
+  border-radius:26px;padding:46px 38px 42px;
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease);
+  cursor:default;
+}
+.srv-card:hover{transform:translateY(-12px)}
+
+.srv-nails{
+  background:linear-gradient(150deg,#2a0c1c 0%,#5c1a3b 55%,#7a2050 100%);
+  box-shadow:0 22px 60px rgba(90,15,50,.45);
+}
+.srv-nails:hover{box-shadow:0 36px 80px rgba(229,25,125,.5)}
+
+.srv-viso{
+  background:linear-gradient(150deg,#1c1400 0%,#3d2c00 55%,#5c4200 100%);
+  box-shadow:0 22px 60px rgba(80,55,0,.4);
+}
+.srv-viso:hover{box-shadow:0 36px 80px rgba(201,162,75,.5)}
+
+.srv-corpo{
+  background:linear-gradient(150deg,#071710 0%,#0e3820 55%,#145730 100%);
+  box-shadow:0 22px 60px rgba(8,35,18,.5);
+}
+.srv-corpo:hover{box-shadow:0 36px 80px rgba(31,122,69,.5)}
+
+/* glow orb */
+.srv-orb{
+  position:absolute;width:260px;height:260px;border-radius:50%;
+  top:-80px;right:-60px;filter:blur(55px);opacity:.3;
+  transition:opacity .45s;pointer-events:none;
+}
+.srv-card:hover .srv-orb{opacity:.5}
+.srv-nails .srv-orb{background:var(--pink)}
+.srv-viso .srv-orb{background:var(--gold)}
+.srv-corpo .srv-orb{background:#2db85a}
+
+/* watermark number */
+.srv-num{
+  position:absolute;bottom:-24px;right:20px;
+  font-family:'Cormorant Garamond',serif;font-size:8.5rem;font-weight:600;
+  color:#fff;opacity:.05;line-height:1;user-select:none;pointer-events:none;letter-spacing:-.04em;
+}
+
+/* top accent line */
+.srv-card::after{
+  content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,currentColor,transparent);
+  opacity:.6;
+}
+.srv-nails::after{color:var(--pink)}
+.srv-viso::after{color:var(--gold)}
+.srv-corpo::after{color:#2db85a}
+
+/* header */
+.srv-tag{
+  font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;
+  color:rgba(255,255,255,.45);font-weight:500;margin-bottom:14px;
+}
+.srv-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3rem;font-weight:600;color:#fff;line-height:1;
+  margin-bottom:16px;
+}
+.srv-accent{width:32px;height:2px;margin-bottom:30px;border-radius:2px}
+.srv-nails .srv-accent{background:var(--pink)}
+.srv-viso .srv-accent{background:var(--gold)}
+.srv-corpo .srv-accent{background:#2db85a}
+
+/* list */
+.srv-items{list-style:none;display:flex;flex-direction:column;margin-top:auto}
+.srv-items li{
+  display:flex;align-items:center;gap:13px;
+  padding:10px 0;
+  border-bottom:1px solid rgba(255,255,255,.07);
+  font-size:.95rem;font-weight:300;
+  color:rgba(255,255,255,.78);
+  transition:color .25s,gap .25s;
+}
+.srv-items li:last-child{border-bottom:none}
+.srv-items li:hover{color:#fff;gap:18px}
+.srv-items li::before{
+  content:"";width:4px;height:4px;border-radius:50%;flex-shrink:0;opacity:.9;
+}
+.srv-nails .srv-items li::before{background:var(--pink-2)}
+.srv-viso .srv-items li::before{background:var(--gold-soft)}
+.srv-corpo .srv-items li::before{background:#5bd67a}
+.srv-items .sub{font-size:.73rem;opacity:.5;margin-left:2px}
+
+/* ---------- NAIL CAROUSEL ---------- */
+.nail-carousel{background:var(--green-900);padding:clamp(60px,8vw,110px) 0;overflow:hidden}
+.nail-carousel .head h2{color:#fff}
+.nail-carousel .head p{color:#b9c9bf}
+.nc-row{overflow:hidden;margin-bottom:14px}
+.nc-row:last-of-type{margin-bottom:0}
+.nc-track{display:flex;gap:14px;width:max-content}
+.nc-fwd{animation:ncLeft 36s linear infinite}
+.nc-rev{animation:ncRight 36s linear infinite}
+.nail-carousel:hover .nc-track{animation-play-state:paused}
+.nc-track figure{
+  width:240px;height:300px;border-radius:18px;overflow:hidden;flex-shrink:0;
+  position:relative;cursor:pointer;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+  border:1px solid rgba(201,162,75,.15);
+}
+.nc-track figure img{width:100%;height:100%;object-fit:cover;transition:.6s var(--ease)}
+.nc-track figure:hover img{transform:scale(1.07)}
+.nc-track figure::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(10,44,24,.5) 0%,transparent 50%);
+  opacity:0;transition:.4s;
+}
+.nc-track figure:hover::after{opacity:1}
+@keyframes ncLeft{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes ncRight{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+
+/* ---------- GALLERY ---------- */
+.gallery{background:linear-gradient(180deg,#fff, #f1ede3)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px}
+.grid figure{position:relative;overflow:hidden;border-radius:16px;cursor:pointer;box-shadow:0 8px 24px rgba(15,58,31,.12)}
+.grid figure img{width:100%;height:100%;object-fit:cover;transition:.7s var(--ease)}
+.grid figure::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,44,24,.55),transparent 55%);opacity:0;transition:.4s}
+.grid figure:hover img{transform:scale(1.1)}
+.grid figure:hover::after{opacity:1}
+.grid figure .tag{position:absolute;left:14px;bottom:12px;color:#fff;font-size:.82rem;letter-spacing:.08em;opacity:0;transform:translateY(8px);transition:.4s;z-index:2}
+.grid figure:hover .tag{opacity:1;transform:none}
+.tall{grid-row:span 2}
+
+/* ---------- REELS ---------- */
+.reels{background:var(--green-900);color:#fff;position:relative;overflow:hidden}
+.reels .head h2{color:#fff}
+.reels .head p{color:#b9c9bf}
+.reel-row{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.reel{
+  position:relative;border-radius:20px;overflow:hidden;aspect-ratio:9/16;
+  box-shadow:0 18px 44px rgba(0,0,0,.4);border:1px solid rgba(227,201,135,.25);cursor:pointer;
+}
+.reel video{width:100%;height:100%;object-fit:cover;display:block}
+.reel .play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(10,44,24,.25);transition:.3s}
+.reel .play svg{width:62px;height:62px;filter:drop-shadow(0 6px 14px rgba(0,0,0,.4));transition:.3s}
+.reel:hover .play{background:rgba(10,44,24,.05)}
+.reel:hover .play svg{transform:scale(1.12)}
+.reel.playing .play{opacity:0;pointer-events:none}
+
+/* ---------- ABOUT ---------- */
+.about{background:var(--cream)}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:center}
+.about-photo{position:relative}
+.about-photo img{border-radius:24px;box-shadow:var(--shadow);position:relative;z-index:2}
+.about-photo .frame{position:absolute;inset:18px -18px -18px 18px;border:2px solid var(--gold);border-radius:24px;z-index:1}
+.about h2{font-size:clamp(2.1rem,4.6vw,3.2rem);color:var(--green-800);font-weight:600;line-height:1.08;margin:.1em 0 .3em}
+.about p{color:#4c5d51;margin-bottom:16px;max-width:52ch}
+.stats{display:flex;gap:34px;margin-top:26px;flex-wrap:wrap}
+.stat b{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--pink);display:block;line-height:1}
+.stat span{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:#7a877f}
+
+/* ---------- CONTACT ---------- */
+.contact{background:linear-gradient(160deg,var(--green-800),var(--green-900));color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.contact .head h2{color:#fff}
+.info-item{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+.info-item .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:rgba(255,255,255,.08);color:var(--gold-soft);flex:0 0 auto}
+.info-item b{display:block;font-size:1.05rem;color:#fff}
+.info-item span{color:#b9c9bf;font-size:.92rem}
+.socials{display:flex;gap:14px;margin-top:30px}
+.socials a{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.1);transition:.35s var(--ease)}
+.socials a:hover{background:var(--pink);transform:translateY(-4px)}
+.wa-big{margin-top:30px;width:100%;justify-content:center;background:#25D366;color:#063;font-weight:600;color:#fff;box-shadow:0 14px 34px rgba(37,211,102,.4)}
+.wa-big:hover{transform:translateY(-3px)}
+form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);padding:32px;border-radius:22px;backdrop-filter:blur(6px)}
+form label{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-soft);display:block;margin-bottom:7px}
+form .field{margin-bottom:18px}
+form input,form textarea,form select{
+  width:100%;padding:13px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.06);color:#fff;font-family:inherit;font-size:.95rem;transition:.3s;
+}
+form input:focus,form textarea:focus,form select:focus{outline:none;border-color:var(--gold);background:rgba(255,255,255,.12)}
+form option{color:#13241a}
+form textarea{resize:vertical;min-height:96px}
+.form-note{font-size:.82rem;color:#9fb3a6;margin-top:6px}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--green-900);color:#cdddd2;padding:40px 0;text-align:center;border-top:1px solid rgba(255,255,255,.08)}
+footer .brand{justify-content:center;margin-bottom:14px}
+footer small{color:#7e9186;font-size:.82rem}
+footer a{color:var(--gold-soft)}
+
+/* floating whatsapp */
+.fab{position:fixed;right:22px;bottom:22px;z-index:90;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 12px 30px rgba(37,211,102,.5);animation:pulse 2.4s infinite;transition:.3s}
+.fab:hover{transform:scale(1.08)}
+
+/* ---------- LIGHTBOX ---------- */
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(8,22,14,.92);display:none;align-items:center;justify-content:center;padding:30px}
+.lightbox.open{display:flex;animation:fadeIn .3s}
+.lightbox img{max-width:90vw;max-height:88vh;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lightbox .x{position:absolute;top:24px;right:30px;color:#fff;font-size:2rem;cursor:pointer;line-height:1}
+.lightbox .nav-b{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2.4rem;cursor:pointer;padding:10px 18px;user-select:none;opacity:.8}
+.lightbox .nav-b:hover{opacity:1}
+.lightbox .prev{left:14px}.lightbox .next{right:14px}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(38px);transition:.9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}
+
+/* ---------- animations ---------- */
+@keyframes fadeUp{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes floatLogo{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes wheel{0%{opacity:1;top:7px}100%{opacity:0;top:18px}}
+@keyframes scrollX{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.nc-fwd,.nc-rev{animation:none}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+/* ---------- responsive ---------- */
+@media(max-width:900px){
+  nav.links{position:fixed;inset:0 0 0 auto;width:min(78vw,320px);background:var(--green-900);flex-direction:column;justify-content:center;gap:26px;transform:translateX(100%);transition:.45s var(--ease);box-shadow:-20px 0 50px rgba(0,0,0,.4)}
+  nav.links.open{transform:none}
+  .burger{display:flex;z-index:120}
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-copy .lead,.hero-copy h1{margin-inline:auto}
+  .hero-btns{justify-content:center}
+  .hero-logo{order:-1;margin-bottom:10px}
+  .hero-logo img{width:230px}
+  .srv-cards{grid-template-columns:1fr}
+  .srv-card{min-height:auto}
+  .grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}
+  .reel-row{grid-template-columns:1fr 1fr}
+  .about-grid{grid-template-columns:1fr;gap:50px}
+  .about-photo .frame{inset:14px -14px -14px 14px}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .reel-row{grid-template-columns:1fr}
+  .marquee span{font-size:1.1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#hero" class="brand">
+    <img src="assets/img/logo.jpg" alt="Aires Beauty logo" />
+    <span><b>Aires Beauty</b><small>Estetica</small></span>
+  </a>
+  <nav class="links" id="links">
+    <a href="#servizi">Servizi</a>
+    <a href="#galleria">Galleria</a>
+    <a href="#reels">Video</a>
+    <a href="#about">Chi siamo</a>
+    <a href="#contatti">Contatti</a>
+    <a href="https://wa.me/393278636092" target="_blank" rel="noopener" class="nav-cta">Prenota</a>
+  </nav>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <!-- decorative leaves/petals -->
+  <svg class="leaf" data-speed="0.25" style="top:8%;left:-3%;width:240px" viewBox="0 0 200 200"><path d="M20 180C20 90 90 20 180 20c0 90-70 160-160 160z" fill="#1f7a45"/></svg>
+  <svg class="leaf" data-speed="0.4" style="bottom:-4%;right:-2%;width:300px;transform:rotate(170deg)" viewBox="0 0 200 200"><path d="M20 180C20 90 90 20 180 20c0 90-70 160-160 160z" fill="#145a32"/></svg>
+  <svg class="petal" data-speed="0.6" style="top:22%;right:14%;width:90px" viewBox="0 0 100 140"><path d="M50 0C70 50 100 70 100 95a50 45 0 1 1-100 0C0 70 30 50 50 0z" fill="#e5197d"/></svg>
+  <svg class="petal" data-speed="0.5" style="bottom:16%;left:10%;width:64px;transform:rotate(40deg)" viewBox="0 0 100 140"><path d="M50 0C70 50 100 70 100 95a50 45 0 1 1-100 0C0 70 30 50 50 0z" fill="#ff3b6b"/></svg>
+
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">Centro estetico · Nails · Viso · Corpo</span>
+      <h1>La tua bellezza<span class="script">prende vita</span></h1>
+      <p class="lead">Trattamenti di estetica curati nei dettagli, in un ambiente accogliente e raffinato. Lasciati coccolare da Aires Beauty.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/393278636092?text=Ciao%20Aires%20Beauty!%20Vorrei%20prenotare%20un%20appuntamento." target="_blank" rel="noopener" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.044z"/></svg>
+          Prenota su WhatsApp
+        </a>
+        <a href="#servizi" class="btn btn-ghost">Scopri i servizi</a>
+      </div>
+    </div>
+    <div class="hero-logo">
+      <div class="ring"></div>
+      <img src="assets/img/logo.jpg" alt="Aires Beauty Estetica" />
+    </div>
+  </div>
+
+  <div class="scroll-ind"><div class="mouse"></div>Scorri</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="container about-grid">
+    <div class="about-photo reveal">
+      <div class="frame"></div>
+      <img src="assets/img/foto-08.jpg" alt="Aires Beauty - lo studio" />
+    </div>
+    <div class="about-copy reveal d1">
+      <span class="eyebrow">Chi siamo</span>
+      <h2>Benvenuta in Aires Beauty</h2>
+      <p>Aires Beauty Estetica è un centro estetico dove professionalità e passione si incontrano. Ogni cliente viene accolta in uno spazio curato e rilassante, con trattamenti personalizzati per valorizzare la bellezza naturale.</p>
+      <p>Dalla nail art al make-up sposa, dalla depilazione laser ai massaggi e alla radiofrequenza: utilizziamo prodotti di qualità e tecnologie avanzate per offrirti il meglio.</p>
+      <div class="stats">
+        <div class="stat"><b>16+</b><span>Trattamenti</span></div>
+        <div class="stat"><b>100%</b><span>Cura nei dettagli</span></div>
+        <div class="stat"><b>5★</b><span>Esperienza</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="track" id="track">
+    <span>Manicure</span><b>·</b><span>Semipermanente</span><b>·</b><span>Ricostruzione Unghie</span><b>·</b><span>Make-up Sposa</span><b>·</b><span>Laminazione Ciglia</span><b>·</b><span>Depilazione Laser</span><b>·</b><span>Massaggi</span><b>·</b><span>Radiofrequenza</span><b>·</b>
+  </div>
+</div>
+
+<!-- SERVIZI -->
+<section class="section services" id="servizi">
+  <div class="container">
+    <div class="head center reveal">
+      <span class="eyebrow">I nostri trattamenti</span>
+      <h2>Servizi su misura per te</h2>
+      <p>Dalle unghie al viso fino al corpo: ogni trattamento è pensato per farti sentire curata, rilassata e splendente.</p>
+    </div>
+    <div class="srv-cards">
+
+      <div class="srv-card srv-nails reveal d1">
+        <div class="srv-orb"></div>
+        <span class="srv-num">01</span>
+        <p class="srv-tag">Unghie &amp; Pedicure</p>
+        <h3 class="srv-title">Nails</h3>
+        <div class="srv-accent"></div>
+        <ul class="srv-items">
+          <li>Manicure</li>
+          <li>Semipermanente</li>
+          <li>Ricostruzione unghie</li>
+          <li>Pedicure estetico</li>
+          <li>Pedicure curativo</li>
+        </ul>
+      </div>
+
+      <div class="srv-card srv-viso reveal d2">
+        <div class="srv-orb"></div>
+        <span class="srv-num">02</span>
+        <p class="srv-tag">Make-up &amp; Trattamenti</p>
+        <h3 class="srv-title">Viso</h3>
+        <div class="srv-accent"></div>
+        <ul class="srv-items">
+          <li>Make-up giorno / sera</li>
+          <li>Make-up sposa</li>
+          <li>Pulizia viso</li>
+          <li>Trattamento viso</li>
+          <li>Laminazione ciglia</li>
+        </ul>
+      </div>
+
+      <div class="srv-card srv-corpo reveal d3">
+        <div class="srv-orb"></div>
+        <span class="srv-num">03</span>
+        <p class="srv-tag">Depilazione &amp; Benessere</p>
+        <h3 class="srv-title">Corpo</h3>
+        <div class="srv-accent"></div>
+        <ul class="srv-items">
+          <li>Depilazione brasiliana</li>
+          <li>Ceretta classica</li>
+          <li>Depilazione progressiva <span class="sub">(Laser Diodo 808)</span></li>
+          <li>Lipolaser</li>
+          <li>Massaggi</li>
+          <li>Radiofrequenza corpo</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NAIL CAROUSEL -->
+<section class="nail-carousel" id="nails">
+  <div class="container">
+    <div class="head center reveal" style="margin-bottom:48px">
+      <span class="eyebrow">Nail Art</span>
+      <h2>Le nostre creazioni</h2>
+      <p>Ogni unghia è un'opera d'arte. Scorri per scoprire i nostri lavori.</p>
+    </div>
+  </div>
+
+  <!-- Riga 1 — scorre a sinistra -->
+  <div class="nc-row">
+    <div class="nc-track nc-fwd">
+      <figure><img loading="lazy" src="assets/img/foto-01.jpg" alt="Nail art"></figure>
+      <figure><img loading="lazy" src="assets/img/foto-07.jpg" alt="Nail art"></figure>
+      <figure><img loading="lazy" src="assets/img/foto-09.jpg" alt="Nail art"></figure>
+      <figure><img loading="lazy" src="assets/img/foto-12.jpg" alt="Nail art"></figure>
+      <figure><img loading="lazy" src="assets/img/foto-28.jpg" alt="Nail art"></figure>
+      <figure><img loading="lazy" src="assets/img/foto-32.jpg" alt="Nail art"></figure>
+      <!-- duplicati per loop seamless -->
+      <figure><img loading="lazy" src="assets/img/foto-01.jpg" alt="Nail art"></figure>
+      <figure><img loading="lazy" src="assets/img/foto-07.jpg" alt="Nail art"></figure>
+      <figure><img loading="lazy" src="assets/img/foto-09.jpg" alt="Nail art"></figure>
+      <figure><img loading="lazy" src="assets/img/foto-12.jpg" alt="Nail art"></figure>
+      <figure><img loading="lazy" src="assets/img/foto-28.jpg" alt="Nail art"></figure>
+      <figure><img loading="lazy" src="assets/img/foto-32.jpg" alt="Nail art"></figure>
+    </div>
+  </div>
+
+  <!-- Riga 2 — scorre a destra -->
+  <div class="nc-row">
+    <div class="nc-track nc-rev">
+      <figure><img loading="lazy" src="assets/img/foto-04.jpg" alt="Nail art"></figure>
+      <figure><img loading="lazy" src="assets/img/foto-11.jpg" alt="Nail art"></figure>
+      <figure><img loading="lazy" src="assets/img/foto-16.jpg" alt="Nail art"></figure>
+      <figure><img loading="lazy" src="assets/img/foto-18.jpg" alt="Nail art"></figure>
+      <figure><img loading="lazy" src="assets/img/foto-27.jpg" alt="Nail art"></figure>
+      <figure><img loading="lazy" src="assets/img/foto-30.jpg" alt="Nail art"></figure>
+      <!-- duplicati per loop seamless -->
+      <figure><img loading="lazy" src="assets/img/foto-04.jpg" alt="Nail art"></figure>
+      <figure><img loading="lazy" src="assets/img/foto-11.jpg" alt="Nail art"></figure>
+      <figure><img loading="lazy" src="assets/img/foto-16.jpg" alt="Nail art"></figure>
+      <figure><img loading="lazy" src="assets/img/foto-18.jpg" alt="Nail art"></figure>
+      <figure><img loading="lazy" src="assets/img/foto-27.jpg" alt="Nail art"></figure>
+      <figure><img loading="lazy" src="assets/img/foto-30.jpg" alt="Nail art"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERIA -->
+<section class="section gallery" id="galleria">
+  <div class="container">
+    <div class="head center reveal">
+      <span class="eyebrow">Il nostro lavoro</span>
+      <h2>Galleria</h2>
+      <p>Un assaggio delle nostre creazioni nail art e dei trattamenti realizzati in studio.</p>
+    </div>
+    <div class="grid" id="grid"><!-- filled by JS --></div>
+  </div>
+</section>
+
+<!-- REELS -->
+<section class="section reels" id="reels">
+  <div class="container">
+    <div class="head center reveal">
+      <span class="eyebrow">In studio</span>
+      <h2>I nostri video</h2>
+      <p>Guarda i trattamenti in azione. Tocca per riprodurre.</p>
+    </div>
+    <div class="reel-row" id="reelRow"><!-- filled by JS --></div>
+  </div>
+</section>
+
+<!-- CONTATTI -->
+<section class="section contact" id="contatti">
+  <div class="container">
+    <div class="head center reveal">
+      <span class="eyebrow">Prenota il tuo momento</span>
+      <h2>Contattaci</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="info-item">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><b>327 863 6092</b><span>Chiamaci per informazioni</span></div>
+        </div>
+        <div class="info-item">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M22 7l-10 6L2 7"/></svg></div>
+          <div><b>@aires_beauty_122</b><span>Seguici su Instagram</span></div>
+        </div>
+        <div class="info-item">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2a10 10 0 00-3 19.5v-6.9H6.5V12H9V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.6h-2.3v6.9A10 10 0 0012 2z"/></svg></div>
+          <div><b>Aires Beauty Estetica</b><span>Trovaci su Facebook</span></div>
+        </div>
+
+        <div class="socials">
+          <a href="https://www.instagram.com/aires_beauty_122/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg></a>
+          <a href="https://wa.me/393278636092" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.044z"/></svg></a>
+        </div>
+
+        <a href="https://wa.me/393278636092?text=Ciao%20Aires%20Beauty!%20Vorrei%20prenotare%20un%20appuntamento." target="_blank" rel="noopener" class="btn wa-big">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.044z"/></svg>
+          Scrivici su WhatsApp
+        </a>
+      </div>
+
+      <form class="reveal d1" id="contactForm" onsubmit="return sendWhatsApp(event)">
+        <div class="field">
+          <label>Nome</label>
+          <input type="text" id="f-nome" placeholder="Il tuo nome" required />
+        </div>
+        <div class="field">
+          <label>Email o telefono</label>
+          <input type="text" id="f-contatto" placeholder="Come possiamo ricontattarti" required />
+        </div>
+        <div class="field">
+          <label>Servizio di interesse</label>
+          <select id="f-servizio">
+            <option>Nails / Unghie</option>
+            <option>Make-up</option>
+            <option>Laminazione ciglia</option>
+            <option>Pulizia / Trattamento viso</option>
+            <option>Depilazione / Laser</option>
+            <option>Massaggi</option>
+            <option>Radiofrequenza</option>
+            <option>Altro</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Messaggio</label>
+          <textarea id="f-msg" placeholder="Scrivi qui la tua richiesta..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Invia richiesta</button>
+        <p class="form-note">Inviando, si aprirà WhatsApp con il messaggio già pronto da spedire.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <a href="#hero" class="brand"><img src="assets/img/logo.jpg" alt="logo"/><span><b>Aires Beauty</b><small>Estetica</small></span></a>
+    <p><a href="tel:+393278636092">327 863 6092</a> · <a href="https://www.instagram.com/aires_beauty_122/" target="_blank" rel="noopener">@aires_beauty_122</a></p>
+    <small>© <span id="year"></span> Aires Beauty Estetica · Tutti i diritti riservati</small>
+  </div>
+</footer>
+
+<!-- floating WhatsApp -->
+<a href="https://wa.me/393278636092?text=Ciao%20Aires%20Beauty!%20Vorrei%20prenotare%20un%20appuntamento." target="_blank" rel="noopener" class="fab" aria-label="WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.044z"/></svg>
+</a>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="x" id="lbClose">&times;</span>
+  <span class="nav-b prev" id="lbPrev">&#8249;</span>
+  <img id="lbImg" src="" alt="" />
+  <span class="nav-b next" id="lbNext">&#8250;</span>
+</div>
+
+<script>
+// year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// nav scroll
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+
+// burger
+const burger=document.getElementById('burger'),links=document.getElementById('links');
+burger.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+// duplicate marquee for seamless loop
+const track=document.getElementById('track');track.innerHTML+=track.innerHTML;
+
+// gallery photos (exclude 08 = portrait used in about)
+const photos=[];
+for(let i=1;i<=32;i++){const n=String(i).padStart(2,'0');if(n==='08')continue;photos.push('assets/img/foto-'+n+'.jpg');}
+const grid=document.getElementById('grid');
+const tallSet=new Set([0,5,9,14,18,23]);
+photos.forEach((src,i)=>{
+  const fig=document.createElement('figure');
+  if(tallSet.has(i))fig.classList.add('tall');
+  fig.innerHTML='<img loading="lazy" src="'+src+'" alt="Aires Beauty - lavoro '+(i+1)+'"><span class="tag">Aires Beauty</span>';
+  fig.addEventListener('click',()=>openLb(i));
+  grid.appendChild(fig);
+});
+
+// lightbox
+const lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg');
+let cur=0;
+function openLb(i){cur=i;lbImg.src=photos[i];lb.classList.add('open');}
+function move(d){cur=(cur+d+photos.length)%photos.length;lbImg.src=photos[cur];}
+document.getElementById('lbClose').onclick=()=>lb.classList.remove('open');
+document.getElementById('lbNext').onclick=()=>move(1);
+document.getElementById('lbPrev').onclick=()=>move(-1);
+lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('open');});
+addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')lb.classList.remove('open');if(e.key==='ArrowRight')move(1);if(e.key==='ArrowLeft')move(-1);});
+
+// reels
+const reelRow=document.getElementById('reelRow');
+for(let i=1;i<=6;i++){
+  const d=document.createElement('div');d.className='reel';
+  d.innerHTML='<video src="assets/video/reel-'+i+'.mp4" poster="assets/video/reel-'+i+'.jpg" playsinline preload="none" loop></video>'+
+    '<div class="play"><svg viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="12" r="11" fill="rgba(229,25,125,.9)"/><path d="M10 8l6 4-6 4z" fill="#fff"/></svg></div>';
+  const v=d.querySelector('video');
+  d.addEventListener('click',()=>{
+    if(v.paused){document.querySelectorAll('.reel video').forEach(o=>{if(o!==v){o.pause();o.closest('.reel').classList.remove('playing');}});v.play();d.classList.add('playing');}
+    else{v.pause();d.classList.remove('playing');}
+  });
+  v.addEventListener('pause',()=>d.classList.remove('playing'));
+  v.addEventListener('play',()=>d.classList.add('playing'));
+  reelRow.appendChild(d);
+}
+
+// reveal on scroll
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// parallax hero decorations
+const decos=document.querySelectorAll('.hero .leaf,.hero .petal');
+addEventListener('scroll',()=>{const y=scrollY;decos.forEach(d=>{const s=parseFloat(d.dataset.speed||0.3);d.style.transform=(d.style.transform.replace(/translateY\([^)]*\)/,''))+' translateY('+(y*s)+'px)';});},{passive:true});
+
+// contact form -> whatsapp
+function sendWhatsApp(e){
+  e.preventDefault();
+  const nome=document.getElementById('f-nome').value.trim();
+  const c=document.getElementById('f-contatto').value.trim();
+  const s=document.getElementById('f-servizio').value;
+  const m=document.getElementById('f-msg').value.trim();
+  const lines=['Ciao Aires Beauty! Sono '+nome+'.','Servizio: '+s,'Contatto: '+c];
+  if(m)lines.push('Messaggio: '+m);
+  const txt=encodeURIComponent(lines.join('\n'));
+  window.open('https://wa.me/393278636092?text='+txt,'_blank');
+  return false;
+}
+</script>
+</body>
+</html>
